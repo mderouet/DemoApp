@@ -2,6 +2,7 @@
 
 ![Java CI with Gradle](https://github.com/mderouet/DemoApp/workflows/Java%20CI%20with%20Gradle/badge.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![codecov](https://codecov.io/gh/your-username/your-repo-name/branch/main/graph/badge.svg)](https://codecov.io/gh/your-username/your-repo-name)
 
 This is a demo Spring Boot application that implements CRUD operations for a Person entity using Java 21 and Spring Boot 3.x.
 

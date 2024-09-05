@@ -18,4 +18,8 @@ jobs:
     - name: Build with Gradle
       uses: gradle/gradle-build-action@v2.4.2
       with:
-        arguments: build
+        arguments: build jacocoTestReport
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        fail_ci_if_error: true

@@ -2,6 +2,7 @@ plugins {
     id 'org.springframework.boot' version '3.2.0'
     id 'io.spring.dependency-management' version '1.1.4'
     id 'java'
+    id 'jacoco'  // Add this line
 }
 
 group = 'com.example'
@@ -26,4 +27,27 @@ dependencies {
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+test {
+    useJUnitPlatform()
+    finalizedBy jacocoTestReport  // Generate report after tests run
+}
+
+jacocoTestReport {
+    dependsOn test  // Tests are required to run before generating the report
+    reports {
+        xml.required = true  // Generate XML report for CI tools
+        html.required = true  // Generate HTML report for human readability
+    }
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.5  // Minimum coverage of 50%
+            }
+        }
+    }
 }

@@ -22,14 +22,15 @@ This is a demo Spring Boot application that implements CRUD operations for a Per
 
 - CRUD operations for Person entity
 - RESTful API
-- Spring Boot 2.x
+- Spring Boot 3.x
 - Gradle build system
 - Continuous Integration with GitHub Actions
+- Java 21 support
 
 ## Prerequisites
 
-- Java 11 or later
-- Gradle 6.x or later
+- Java 21 or later
+- Gradle 8.x or later
 
 ## Getting Started
 

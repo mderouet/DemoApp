@@ -26,13 +26,12 @@ public class PersonService {
         return personRepository.save(person);
     }
 
-    public Optional<Person> updatePerson(Long id, Person personDetails) {
-        return personRepository.findById(id)
-                .map(person -> {
-                    person.setName(personDetails.getName());
-                    person.setAge(personDetails.getAge());
-                    return personRepository.save(person);
-                });
+    public Person updatePerson(Long id, Person personDetails) {
+        Person person = personRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Person not found"));
+        person.setName(personDetails.getName());
+        person.setAge(personDetails.getAge());
+        return personRepository.save(person);
     }
 
     public void deletePerson(Long id) {
